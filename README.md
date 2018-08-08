@@ -5,7 +5,7 @@ Features:
 
     > Read any label of gmail ex. 'Inbox'.
     > Read specific duration emails.
-    > Show all emails subjects. You can also show data using few modification.
+    > View all emails subjects. You can also view data using few modification.
 
 How to use:
 ----------
