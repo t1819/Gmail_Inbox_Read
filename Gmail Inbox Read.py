@@ -19,7 +19,8 @@ to_date = input("Please enter the TO date. ex.01-Aug-2018\n")
 # email_address = "abc@example.com"
 # password = "Your password"
 # label = "Jenkins"
-# days = "07-Jul-2018,31-Jun-2018"
+# from_date = "07-Jul-2018"
+# to_date = "30-Jul-2018"
 
 smtp_server = "imap.gmail.com"
 smpt_port = 993
