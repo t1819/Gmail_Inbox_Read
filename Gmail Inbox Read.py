@@ -11,7 +11,7 @@ from dateutil.relativedelta import relativedelta
 # comment this code if you want to store details in code.
 email_address = input('Email Address: ')
 password = print('Your password: ')+getpass.getpass()
-label = input("Please enter the gmail label name:")
+label = input("Please enter the Gmail label name:")
 days = input("Read email in between: [new date,old date] [d-m-y,d-m-y] ex.[04-Jun-2018,02-Mar-2018]")
 
 # Uncomment the below code for storing details.
@@ -34,7 +34,7 @@ def filter_date(data):
     command = 'SINCE "'+to_date+'" BEFORE "'+from_date+'"'
 
 
-def read_email_from_gmail():
+def read_emails():
     filter_date(days)
     mail = imaplib.IMAP4_SSL(smtp_server)
     mail.login(email_address, password)
@@ -58,7 +58,7 @@ def read_email_from_gmail():
     return subject
 
 
-subjects = read_email_from_gmail()
+subjects = read_emails()
 for i in subject:
     print(i)
     time.sleep(0.2)
