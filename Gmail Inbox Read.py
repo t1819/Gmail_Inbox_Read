@@ -10,9 +10,10 @@ from dateutil.relativedelta import relativedelta
 
 # comment this code if you want to store details in code.
 email_address = input('Email Address: ')
-password = print('Your password: ')+getpass.getpass()
+password = getpass.getpass()
 label = input("Please enter the Gmail label name:")
-days = input("Read email in between: [new date,old date] [d-m-y,d-m-y] ex.[04-Jun-2018,02-Mar-2018]")
+from_date = input("Please enter the FROM date: ex. 27-Jul-2018\n")
+to_date = input("Please enter the TO date. ex.01-Aug-2018\n")
 
 # Uncomment the below code for storing details.
 # email_address = "abc@example.com"
@@ -25,17 +26,13 @@ smpt_port = 993
 subject = []
 
 
-def filter_date(data):
+def filter_date(d1, d2):
     global command
 
-    date = days.split(",")
-    from_date = date[0]
-    to_date = date[1]
-    command = 'SINCE "'+to_date+'" BEFORE "'+from_date+'"'
-
+    command = 'SINCE "'+d2+'" BEFORE "'+d1+'"'
 
 def read_emails():
-    filter_date(days)
+    filter_date(to_date, from_date)
     mail = imaplib.IMAP4_SSL(smtp_server)
     mail.login(email_address, password)
     mail.select('"'+label+'"', readonly=True)
@@ -58,7 +55,13 @@ def read_emails():
     return subject
 
 
-subjects = read_emails()
+try:
+    subjects = read_emails()
+except Exception as e:
+    print('[+] Error =' + str(e))
+    input("Press enter to exit.")
 for i in subject:
     print(i)
     time.sleep(0.2)
+
+input("Press enter to exit.")
