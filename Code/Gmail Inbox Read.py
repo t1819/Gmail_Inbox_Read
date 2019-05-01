@@ -4,7 +4,7 @@ import re
 import time
 import config
 '''
-    Description: Read your Gmail label for specific duration and print all the subjects.
+    Description: Read your Gmail label for specific duration and print all subjects.
     Pre-requirements: Go to google account --> security --> enable "Less secure app access" option.
     Use: set options in config.py file before using this script.
 '''
