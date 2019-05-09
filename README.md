@@ -10,7 +10,7 @@ Features:
 How to use:
 ----------
 	> Download the script.
-	> Set peramiters in config.py file.
+	> Set parameters in config.py file.
 	> run script 
 		> python Gmail Inbox Read.py
 	> It's done and you will see the magic.
