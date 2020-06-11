@@ -1,0 +1,5 @@
+email = 'your email@gmail.com'
+password = 'password'
+label = 'Inbox'
+from_date = '27-Apr-2019'
+to_date = '1-May-2019'
